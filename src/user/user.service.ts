@@ -22,8 +22,9 @@ export class UserService {
         throw new ConflictException("Email is already taken.")
        }
        throw err;
+    }   
     }
-
-        
+    async findByEmail(email:string){
+        return this.userModel.findOne({email})
     }
 }
